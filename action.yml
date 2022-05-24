@@ -1,5 +1,5 @@
 name: Publish to npm
-author: pascalgn
+author: alex-kuck
 description: Automatically publish new versions to npm
 
 inputs:

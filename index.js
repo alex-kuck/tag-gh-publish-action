@@ -60,7 +60,7 @@ async function processDirectory(dir, config) {
     "rev-parse",
     "-q",
     "--verify",
-    `refs/tags/v${version}`
+    `refs/tags/${version}`
   ).catch(e =>
     e instanceof ExitError && e.code === 1 ? false : Promise.reject(e)
   );
@@ -74,12 +74,12 @@ async function processDirectory(dir, config) {
       "-a",
       "-m",
       `Release ${version}`,
-      `v${version}`
+      `${version}`
     );
-    await run(dir, "git", "push", "origin", `refs/tags/v${version}`);
+    await run(dir, "git", "push", "origin", `refs/tags/${version}`);
     console.log("Done.");
   } else {
-    console.log(`Tag already exists: v${version}`);
+    console.log(`Tag already exists: ${version}`);
     throw new NeutralExitError();
   }
 }

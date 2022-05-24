@@ -24,12 +24,12 @@ jobs:
       with:
         node-version: 10.0.0
     - name: Publish if version has been updated
-      uses: tonthanhhung/tag-gh-publish-action@168e35e
+      uses: alex-kuck/tag-gh-publish-action@0.1.0
       env: # More info about the environment variables in the README
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated        
 ```
 
-Now, when someone changes the version in `package.json` to 1.2.3 and pushes a commit with the message `Release 1.2.3`, the `tag-release` action will create a new tag `v1.2.3` and publish the package to the npm registry.
+Now, when someone changes the version in `package.json` to 1.2.3 and pushes a commit with the message `Release 1.2.3`, the `tag-release` action will create a new tag `1.2.3` and publish the package to the npm registry.
 
 ### Environment variables
 
